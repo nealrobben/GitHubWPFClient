@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GitHubApiWrapper;
 
 namespace GitHubWPFClient
 {
@@ -23,6 +24,17 @@ namespace GitHubWPFClient
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(input.Text))
+            {
+                var wrapper = new GitHubApiWrapper.GitHubApiWrapper();
+                var user = wrapper.GetUser(input.Text);
+                output.Text = user.ToString();
+            }
+
         }
     }
 }

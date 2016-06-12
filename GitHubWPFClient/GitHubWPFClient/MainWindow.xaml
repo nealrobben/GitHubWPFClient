@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GitHubWPFClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="GitHub Api WPF Client" Height="350" Width="525" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
@@ -17,8 +17,8 @@
             <TextBox Name="input" Width="680" Margin="5"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <Button Name="SendButton" Width="100" Margin="5">Send</Button>
+            <Button Name="SendButton" Width="100" Margin="5" Click="SendButton_Click">Send</Button>
         </StackPanel>
-        <TextBox Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+        <TextBox Grid.Row="2" Name="output" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
     </Grid>
 </Window>
