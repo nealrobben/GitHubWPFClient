@@ -30,9 +30,16 @@ namespace GitHubWPFClient
         {
             if(!string.IsNullOrWhiteSpace(input.Text))
             {
-                var wrapper = new GitHubApiWrapper.GitHubApiWrapper();
-                var user = wrapper.GetUser(input.Text);
-                output.Text = user.ToString();
+                try
+                {
+                    var wrapper = new GitHubApiWrapper.GitHubApiWrapper();
+                    var user = wrapper.GetUser(input.Text);
+                    output.Text = user.HtmlUrl;
+                }
+                catch (ArgumentException)
+                {
+                    output.Text = "Invalid user!";
+                }
             }
 
         }
