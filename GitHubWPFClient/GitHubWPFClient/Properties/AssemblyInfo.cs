@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GitHubWPFClient")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A WPF Front-end for my GitHubApiWrapper project")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("GitHubWPFClient")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright ©  2016 Neal Robben")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

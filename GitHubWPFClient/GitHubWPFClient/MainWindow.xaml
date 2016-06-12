@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Margin="5">Username</TextBlock>
+            <TextBox Name="input" Width="680" Margin="5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Button Name="SendButton" Width="100" Margin="5">Send</Button>
+        </StackPanel>
+        <TextBox Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
     </Grid>
 </Window>
