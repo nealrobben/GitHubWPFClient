@@ -26,23 +26,5 @@ namespace GitHubWPFClient
             InitializeComponent();
             DataContext = new MainWindowViewModel();
         }
-
-        //private void SendButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if(!string.IsNullOrWhiteSpace(input.Text))
-        //    {
-        //        try
-        //        {
-        //            var wrapper = new GitHubApiWrapper.GitHubApiWrapper();
-        //            var user = wrapper.GetUser(input.Text);
-        //            output.Text = user.HtmlUrl;
-        //        }
-        //        catch (ArgumentException)
-        //        {
-        //            output.Text = "Invalid user!";
-        //        }
-        //    }
-
-        //}
     }
 }

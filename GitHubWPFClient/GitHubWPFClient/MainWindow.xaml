@@ -17,8 +17,8 @@
             <TextBox Name="input" Width="680" Margin="5" Text="{Binding UserName}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <Button Name="SendButton" Width="100" Margin="5">Send</Button>
+            <Button Name="SendButton" Width="100" Margin="5" Command="{Binding Path=GetUserCommand}">Send</Button>
         </StackPanel>
-        <TextBox Grid.Row="2" Name="output" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+        <TextBox Grid.Row="2" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
     </Grid>
 </Window>

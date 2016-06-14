@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GitHubApiWrapper;
+using System.Windows.Input;
 
 namespace GitHubWPFClient
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        //private Command GetUserCommand;
-
         private string _userName;
         private User _user;
+        private ICommand _getUserCommand;
 
         public string UserName
         {
@@ -41,6 +41,19 @@ namespace GitHubWPFClient
             }
         }
 
+        public ICommand GetUserCommand
+        {
+            get
+            {
+                if(_getUserCommand == null)
+                {
+                    _getUserCommand = new RelayCommand(param => GetUser(), param => true);
+                }
+
+                return _getUserCommand;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void GetUser()
@@ -50,11 +63,11 @@ namespace GitHubWPFClient
                 try
                 {
                     var wrapper = new GitHubApiWrapper.GitHubApiWrapper();
-                    _user = wrapper.GetUser(_userName);
+                    User = wrapper.GetUser(_userName);
                 }
                 catch (ArgumentException)
                 {
-                    _user = null;
+                    User = null;
                 }
             }
         }
