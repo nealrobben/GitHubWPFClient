@@ -14,10 +14,10 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0">
             <TextBlock Margin="5">Username</TextBlock>
-            <TextBox Name="input" Width="680" Margin="5"></TextBox>
+            <TextBox Name="input" Width="680" Margin="5" Text="{Binding UserName}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <Button Name="SendButton" Width="100" Margin="5" Click="SendButton_Click">Send</Button>
+            <Button Name="SendButton" Width="100" Margin="5">Send</Button>
         </StackPanel>
         <TextBox Grid.Row="2" Name="output" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
     </Grid>
