@@ -14,6 +14,7 @@ namespace GitHubWPFClient
         private string _userName;
         private User _user;
         private ICommand _getUserCommand;
+        private ICommand _exitCommand;
 
         public string UserName
         {
@@ -54,9 +55,22 @@ namespace GitHubWPFClient
             }
         }
 
+        public ICommand ExitCommand
+        {
+            get
+            {
+                if(_exitCommand == null)
+                {
+                    _exitCommand = new RelayCommand(param => Exit(), param => true);
+                }
+
+                return _exitCommand;
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void GetUser()
+        private void GetUser()
         {
             if (!string.IsNullOrWhiteSpace(_userName))
             {
@@ -70,6 +84,11 @@ namespace GitHubWPFClient
                     User = null;
                 }
             }
+        }
+
+        private void Exit()
+        {
+            Environment.Exit(0);
         }
 
         private void OnPropertyChanged(string propertyName)
