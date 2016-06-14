@@ -13,7 +13,7 @@
             </MenuItem>
         </Menu>
         <StatusBar HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
-            <Label Name="feedbackLabel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Label>
+            <Label Name="feedbackLabel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding StatusMessage, Mode=OneWay}"></Label>
         </StatusBar>
         <Grid>
             <Grid.RowDefinitions>

@@ -13,6 +13,8 @@ namespace GitHubWPFClient
     {
         private string _userName;
         private User _user;
+        private string _statusMessage;
+
         private ICommand _getUserCommand;
         private ICommand _exitCommand;
 
@@ -38,6 +40,19 @@ namespace GitHubWPFClient
                 {
                     _user = value;
                     OnPropertyChanged(nameof(User));
+                }
+            }
+        }
+
+        public string StatusMessage
+        {
+            get { return _statusMessage; }
+            set
+            {
+                if (_statusMessage != value)
+                {
+                    _statusMessage = value;
+                    OnPropertyChanged(nameof(StatusMessage));
                 }
             }
         }
@@ -78,10 +93,12 @@ namespace GitHubWPFClient
                 {
                     var wrapper = new GitHubApiWrapper.GitHubApiWrapper();
                     User = wrapper.GetUser(_userName);
+                    StatusMessage = string.Empty;
                 }
                 catch (ArgumentException)
                 {
                     User = null;
+                    StatusMessage = "Invalid username";
                 }
             }
         }
