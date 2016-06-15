@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GitHubApiWrapper;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GitHubApiWrapper;
 using System.Windows.Input;
 
 namespace GitHubWPFClient
