@@ -24,7 +24,7 @@ namespace GitHubWPFClient
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
+            DataContext = new MainWindowViewModel(new GitHubApiWrapper.GitHubApiWrapper());
         }
     }
 }

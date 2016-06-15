@@ -14,6 +14,7 @@ namespace GitHubWPFClient
         private string _userName;
         private User _user;
         private string _statusMessage;
+        GitHubApiWrapper.GitHubApiWrapper _wrapper;
 
         private ICommand _getUserCommand;
         private ICommand _exitCommand;
@@ -85,14 +86,18 @@ namespace GitHubWPFClient
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public MainWindowViewModel(GitHubApiWrapper.GitHubApiWrapper wrapper)
+        {
+            _wrapper = wrapper;
+        }
+
         private void GetUser()
         {
             if (!string.IsNullOrWhiteSpace(_userName))
             {
                 try
                 {
-                    var wrapper = new GitHubApiWrapper.GitHubApiWrapper();
-                    User = wrapper.GetUser(_userName);
+                    User = _wrapper.GetUser(_userName);
                     StatusMessage = string.Empty;
                 }
                 catch (ArgumentException)
