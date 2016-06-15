@@ -116,6 +116,7 @@ namespace GitHubWPFClient
                 catch (ArgumentException)
                 {
                     User = null;
+                    Repositories = null;
                     StatusMessage = "Invalid username";
                 }
             }
