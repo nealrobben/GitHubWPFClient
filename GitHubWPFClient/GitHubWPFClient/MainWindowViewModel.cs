@@ -110,6 +110,7 @@ namespace GitHubWPFClient
                 try
                 {
                     User = _wrapper.GetUser(_userName);
+                    Repositories = new ObservableCollection<Repository>(_wrapper.GetRepositoriesForUser(_userName));
                     StatusMessage = string.Empty;
                 }
                 catch (ArgumentException)
