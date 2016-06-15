@@ -14,7 +14,8 @@ namespace GitHubWPFClient
         private string _userName;
         private User _user;
         private string _statusMessage;
-        GitHubApiWrapper.GitHubApiWrapper _wrapper;
+
+        IGitHubWrapper _wrapper;
 
         private ICommand _getUserCommand;
         private ICommand _exitCommand;
@@ -86,7 +87,7 @@ namespace GitHubWPFClient
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public MainWindowViewModel(GitHubApiWrapper.GitHubApiWrapper wrapper)
+        public MainWindowViewModel(IGitHubWrapper wrapper)
         {
             _wrapper = wrapper;
         }

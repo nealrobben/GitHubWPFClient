@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GitHubApiWrapper;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -18,7 +19,7 @@ namespace GitHubWPFClient
             base.OnStartup(e);
 
             MainWindow mw = new MainWindow();
-            mw.DataContext = new MainWindowViewModel(new GitHubApiWrapper.GitHubApiWrapper());
+            mw.DataContext = new MainWindowViewModel(new GitHubWrapper());
             mw.Show();
         }
     }
