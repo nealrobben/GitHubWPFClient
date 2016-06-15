@@ -20,6 +20,7 @@
                 <RowDefinition Height="30" />
                 <RowDefinition Height="30" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="150" />
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0">
                 <TextBlock Margin="5">Username</TextBlock>
@@ -29,6 +30,7 @@
                 <Button Name="SendButton" Width="100" Margin="5" Command="{Binding Path=GetUserCommand}">Send</Button>
             </StackPanel>
             <TextBox Grid.Row="2" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+            <ListBox Grid.Row="3" Name="RepositoriesList" ItemsSource="{Binding Repositories}" DisplayMemberPath="Name"></ListBox>
         </Grid>
     </DockPanel>
 </Window>
