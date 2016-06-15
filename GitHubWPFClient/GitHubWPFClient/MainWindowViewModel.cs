@@ -1,5 +1,6 @@
 ﻿using GitHubApiWrapper;
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -9,6 +10,7 @@ namespace GitHubWPFClient
     {
         private string _userName;
         private User _user;
+        private ObservableCollection<Repository> _repositories;
         private string _statusMessage;
 
         IGitHubWrapper _wrapper;
@@ -38,6 +40,19 @@ namespace GitHubWPFClient
                 {
                     _user = value;
                     OnPropertyChanged(nameof(User));
+                }
+            }
+        }
+
+        public ObservableCollection<Repository> Repositories
+        {
+            get { return _repositories; }
+            set
+            {
+                if(_repositories != value)
+                {
+                    _repositories = value;
+                    OnPropertyChanged(nameof(Repositories));
                 }
             }
         }
