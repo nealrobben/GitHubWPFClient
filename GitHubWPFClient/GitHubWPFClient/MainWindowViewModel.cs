@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace GitHubWPFClient
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : BaseVM
     {
         private string _userName;
         private User _user;
@@ -96,8 +96,6 @@ namespace GitHubWPFClient
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public MainWindowViewModel(IGitHubWrapper wrapper)
         {
             if (wrapper == null)
@@ -130,15 +128,6 @@ namespace GitHubWPFClient
         private void Exit()
         {
             Environment.Exit(0);
-        }
-
-        private void OnPropertyChanged(string propertyName)
-        {
-            if(this.PropertyChanged != null)
-            {
-                var e = new PropertyChangedEventArgs(propertyName);
-                this.PropertyChanged(this, e);
-            }
         }
     }
 }
