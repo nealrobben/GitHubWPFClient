@@ -9,8 +9,8 @@ namespace GitHubWPFClient
     public class MainWindowViewModel : BaseVM
     {
         private string _userName;
-        private User _user;
-        private ObservableCollection<Repository> _repositories;
+        private IUser _user;
+        private ObservableCollection<IRepository> _repositories;
         private string _statusMessage;
 
         private IGitHubWrapper _wrapper;
@@ -31,7 +31,7 @@ namespace GitHubWPFClient
             }
         }
 
-        public User User
+        public IUser User
         {
             get { return _user; }
             set
@@ -44,7 +44,7 @@ namespace GitHubWPFClient
             }
         }
 
-        public ObservableCollection<Repository> Repositories
+        public ObservableCollection<IRepository> Repositories
         {
             get { return _repositories; }
             set
@@ -113,7 +113,7 @@ namespace GitHubWPFClient
                 try
                 {
                     User = _wrapper.GetUser(_userName);
-                    Repositories = new ObservableCollection<Repository>(_wrapper.GetRepositoriesForUser(_userName));
+                    Repositories = new ObservableCollection<IRepository>(_wrapper.GetRepositoriesForUser(_userName));
                     StatusMessage = string.Empty;
                 }
                 catch (ArgumentException)
