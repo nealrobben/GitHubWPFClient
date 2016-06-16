@@ -30,7 +30,10 @@
                 <Button Name="SendButton" Width="100" Margin="5" Command="{Binding Path=GetUserCommand}">Send</Button>
             </StackPanel>
             <TextBox Grid.Row="2" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
-            <ListBox Grid.Row="3" Name="RepositoriesList" ItemsSource="{Binding Repositories}" DisplayMemberPath="Name"></ListBox>
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <Image Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
+                <ListBox Name="RepositoriesList" ItemsSource="{Binding Repositories}"></ListBox>
+            </StackPanel>
         </Grid>
     </DockPanel>
 </Window>
