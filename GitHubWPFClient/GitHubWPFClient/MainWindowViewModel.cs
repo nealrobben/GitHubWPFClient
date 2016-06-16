@@ -101,7 +101,9 @@ namespace GitHubWPFClient
         public MainWindowViewModel(IGitHubWrapper wrapper)
         {
             if (wrapper == null)
+            {
                 throw new ArgumentNullException(nameof(wrapper));
+            }
 
             _wrapper = wrapper;
         }
