@@ -10,6 +10,10 @@ namespace GitHubWPFClient.Tests
     [TestFixture]
     public class MainWindowViewModelTests
     {
-
+        [Test]
+        public void PassingNullToConstructorThrowsException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>new MainWindowViewModel(null));
+        }
     }
 }
