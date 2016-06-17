@@ -13,7 +13,7 @@ namespace GitHubWPFClient
         private ObservableCollection<IRepository> _repositories;
         private string _statusMessage;
 
-        private IGitHubWrapper _wrapper;
+        private readonly IGitHubWrapper _wrapper;
 
         private ICommand _getUserCommand;
         private ICommand _exitCommand;
