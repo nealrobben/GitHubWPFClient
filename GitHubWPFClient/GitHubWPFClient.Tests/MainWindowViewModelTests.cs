@@ -104,5 +104,41 @@ namespace GitHubWPFClient.Tests
             vm.GetUserCommand.Execute(null);
             Assert.IsNull(vm.Repositories);
         }
+
+        [Test]
+        public void StatusMessageIsInitializedToEmptyString()
+        {
+            var mock = new Mock<IGitHubWrapper>();
+            var vm = new MainWindowViewModel(mock.Object);
+
+            Assert.IsTrue(string.IsNullOrWhiteSpace(vm.StatusMessage));
+        }
+
+        [Test]
+        public void UserIsInitializedToNull()
+        {
+            var mock = new Mock<IGitHubWrapper>();
+            var vm = new MainWindowViewModel(mock.Object);
+
+            Assert.IsNull(vm.User);
+        }
+
+        [Test]
+        public void RepositoriesListIsInitializedToNull()
+        {
+            var mock = new Mock<IGitHubWrapper>();
+            var vm = new MainWindowViewModel(mock.Object);
+
+            Assert.IsNull(vm.Repositories);
+        }
+
+        [Test]
+        public void UserNameIsInitializedToEmptyString()
+        {
+            var mock = new Mock<IGitHubWrapper>();
+            var vm = new MainWindowViewModel(mock.Object);
+
+            Assert.IsTrue(string.IsNullOrWhiteSpace(vm.UserName));
+        }
     }
 }
