@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GitHubWPFClient
+namespace GitHubWPFClient.ViewModels
 {
     public class BaseVM : INotifyPropertyChanged
     {

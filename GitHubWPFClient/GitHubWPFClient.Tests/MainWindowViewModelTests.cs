@@ -1,4 +1,5 @@
 ﻿using GitHubApiWrapper;
+using GitHubWPFClient.ViewModels;
 using Moq;
 using NUnit.Framework;
 using System;

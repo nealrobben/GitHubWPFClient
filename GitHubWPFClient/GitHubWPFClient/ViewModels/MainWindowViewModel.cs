@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
-namespace GitHubWPFClient
+namespace GitHubWPFClient.ViewModels
 {
     public class MainWindowViewModel : BaseVM
     {
