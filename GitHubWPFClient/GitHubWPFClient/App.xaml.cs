@@ -1,5 +1,6 @@
 ﻿using GitHubApiWrapper;
 using GitHubWPFClient.ViewModels;
+using GitHubWPFClient.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

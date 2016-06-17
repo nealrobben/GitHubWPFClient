@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GitHubApiWrapper;
 
-namespace GitHubWPFClient
+namespace GitHubWPFClient.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
