@@ -33,7 +33,7 @@
                     <TabItem Header="General">
                         <ScrollViewer>
                             <StackPanel>
-                                <Image Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
+                                <Image HorizontalAlignment="Left" Width="100px" Height="100px" Source="{Binding User.AvatarUrl}"></Image>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Width="75">HTML Url</TextBlock>
                                     <TextBox Width="250" IsReadOnly="True" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
