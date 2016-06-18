@@ -27,19 +27,26 @@
             </StackPanel>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
                 <TabControl Grid.Column="1">
                     <TabItem Header="General">
-                        <TextBox Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+                        <StackPanel>
+                            <Image Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
+                            <TextBox Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+                        </StackPanel>
                     </TabItem>
                     <TabItem Header="Bio">
-                        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.Bio, Mode=OneWay}"></TextBox>
+                        <TextBox TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" Text="{Binding User.Bio, Mode=OneWay}"></TextBox>
                     </TabItem>
                     <TabItem Header="Repositories">
-                        <ListBox Name="RepositoriesList" ItemsSource="{Binding Repositories}"></ListBox>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <ListBox Grid.Column="0" Name="RepositoriesList" ItemsSource="{Binding Repositories}"></ListBox>
+                        </Grid>
                     </TabItem>
                 </TabControl>
             </Grid>
