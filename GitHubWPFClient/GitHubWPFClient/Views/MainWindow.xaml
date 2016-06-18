@@ -36,6 +36,15 @@
                             <TextBox IsReadOnly="True" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
                             <TextBox IsReadOnly="True" Text="{Binding User.Login, Mode=OneWay}"></TextBox>
                             <TextBox IsReadOnly="True" Text="{Binding User.Name, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Company, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Blog, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Location, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Email, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Type, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.PublicRepos, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.PublicGists, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Followers, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Following, Mode=OneWay}"></TextBox>
                             <TextBox IsReadOnly="True" Text="{Binding User.CreatedAt, Mode=OneWay}"></TextBox>
                             <TextBox IsReadOnly="True" Text="{Binding User.UpdatedAt, Mode=OneWay}"></TextBox>
                             <CheckBox Content="Admin" IsHitTestVisible="False" IsChecked="{Binding User.SiteAdmin, Mode=OneWay}"></CheckBox>
