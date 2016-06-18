@@ -33,7 +33,10 @@
                     <TabItem Header="General">
                         <StackPanel>
                             <Image Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
-                            <TextBox Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Name, Mode=OneWay}"></TextBox>
+                            <CheckBox Content="Admin" IsHitTestVisible="False" IsChecked="{Binding User.SiteAdmin, Mode=OneWay}"></CheckBox>
+                            <CheckBox Content="Hireable" IsHitTestVisible="False" IsChecked="{Binding User.Hireable, Mode=OneWay}"></CheckBox>
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Bio">
