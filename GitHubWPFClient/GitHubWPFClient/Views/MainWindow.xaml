@@ -29,7 +29,13 @@
             <TextBox Grid.Row="1" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
                 <Image Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
-                <ListBox Name="RepositoriesList" ItemsSource="{Binding Repositories}"></ListBox>
+                <TabControl>
+                    <TabItem Header="General"></TabItem>
+                    <TabItem Header="Bio"></TabItem>
+                    <TabItem Header="Repositories">
+                        <ListBox Name="RepositoriesList" ItemsSource="{Binding Repositories}"></ListBox>
+                    </TabItem>
+                </TabControl>
             </StackPanel>
         </Grid>
     </DockPanel>
