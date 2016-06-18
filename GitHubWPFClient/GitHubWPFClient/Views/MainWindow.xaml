@@ -31,39 +31,41 @@
                 </Grid.ColumnDefinitions>
                 <TabControl Grid.Column="1">
                     <TabItem Header="General">
-                        <StackPanel>
-                            <Image Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
-                            <TextBlock>HTML Url</TextBlock>
-                            <TextBox IsReadOnly="True" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
-                            <TextBlock>Login</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Login, Mode=OneWay}"></TextBox>
-                            <TextBlock>Name</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Name, Mode=OneWay}"></TextBox>
-                            <TextBlock>Company</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Company, Mode=OneWay}"></TextBox>
-                            <TextBlock>Blog</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Blog, Mode=OneWay}"></TextBox>
-                            <TextBlock>Location</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Location, Mode=OneWay}"></TextBox>
-                            <TextBlock>E-mail</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Email, Mode=OneWay}"></TextBox>
-                            <TextBlock>Type</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Type, Mode=OneWay}"></TextBox>
-                            <TextBlock>Public Repos</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.PublicRepos, Mode=OneWay}"></TextBox>
-                            <TextBlock>Public Gists</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.PublicGists, Mode=OneWay}"></TextBox>
-                            <TextBlock>Followers</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Followers, Mode=OneWay}"></TextBox>
-                            <TextBlock>Following</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.Following, Mode=OneWay}"></TextBox>
-                            <TextBlock>Created at</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.CreatedAt, Mode=OneWay}"></TextBox>
-                            <TextBlock>Updated at</TextBlock>
-                            <TextBox IsReadOnly="True" Text="{Binding User.UpdatedAt, Mode=OneWay}"></TextBox>
-                            <CheckBox Content="Admin" IsHitTestVisible="False" IsChecked="{Binding User.SiteAdmin, Mode=OneWay}"></CheckBox>
-                            <CheckBox Content="Hireable" IsHitTestVisible="False" IsChecked="{Binding User.Hireable, Mode=OneWay}"></CheckBox>
-                        </StackPanel>
+                        <ScrollViewer>
+                            <StackPanel>
+                                <Image Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
+                                <TextBlock>HTML Url</TextBlock>
+                                <TextBox Width="250" IsReadOnly="True" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+                                <TextBlock>Login</TextBlock>
+                                <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Login, Mode=OneWay}"></TextBox>
+                                <TextBlock>Name</TextBlock>
+                                <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Name, Mode=OneWay}"></TextBox>
+                                <TextBlock>Company</TextBlock>
+                                <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Company, Mode=OneWay}"></TextBox>
+                                <TextBlock>Blog</TextBlock>
+                                <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Blog, Mode=OneWay}"></TextBox>
+                                <TextBlock>Location</TextBlock>
+                                <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Location, Mode=OneWay}"></TextBox>
+                                <TextBlock>E-mail</TextBlock>
+                                <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Email, Mode=OneWay}"></TextBox>
+                                <TextBlock>Type</TextBlock>
+                                <TextBox Width="75" IsReadOnly="True" Text="{Binding User.Type, Mode=OneWay}"></TextBox>
+                                <TextBlock>Public Repos</TextBlock>
+                                <TextBox Width="50" IsReadOnly="True" Text="{Binding User.PublicRepos, Mode=OneWay}"></TextBox>
+                                <TextBlock>Public Gists</TextBlock>
+                                <TextBox Width="50" IsReadOnly="True" Text="{Binding User.PublicGists, Mode=OneWay}"></TextBox>
+                                <TextBlock>Followers</TextBlock>
+                                <TextBox Width="50" IsReadOnly="True" Text="{Binding User.Followers, Mode=OneWay}"></TextBox>
+                                <TextBlock>Following</TextBlock>
+                                <TextBox Width="50" IsReadOnly="True" Text="{Binding User.Following, Mode=OneWay}"></TextBox>
+                                <TextBlock>Created at</TextBlock>
+                                <TextBox Width="125" IsReadOnly="True" Text="{Binding User.CreatedAt, Mode=OneWay}"></TextBox>
+                                <TextBlock>Updated at</TextBlock>
+                                <TextBox Width="125" IsReadOnly="True" Text="{Binding User.UpdatedAt, Mode=OneWay}"></TextBox>
+                                <CheckBox Content="Admin" IsHitTestVisible="False" IsChecked="{Binding User.SiteAdmin, Mode=OneWay}"></CheckBox>
+                                <CheckBox Content="Hireable" IsHitTestVisible="False" IsChecked="{Binding User.Hireable, Mode=OneWay}"></CheckBox>
+                            </StackPanel>
+                        </ScrollViewer>
                     </TabItem>
                     <TabItem Header="Bio">
                         <TextBox TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" Text="{Binding User.Bio, Mode=OneWay}"></TextBox>
