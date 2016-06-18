@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="GitHub Api WPF Client" Height="350" Width="525" WindowStartupLocation="CenterScreen">
     <DockPanel>
-        <Menu x:Name="mnuSettings" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30" DockPanel.Dock="Top">
+        <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30" DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Exit" Name="exitMenu" Command="{Binding Path=ExitCommand}" />
+                <MenuItem Header="Exit" Command="{Binding Path=ExitCommand}" />
             </MenuItem>
         </Menu>
         <StatusBar HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
-            <Label Name="feedbackLabel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding StatusMessage, Mode=OneWay}"></Label>
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding StatusMessage, Mode=OneWay}"></Label>
         </StatusBar>
         <Grid>
             <Grid.RowDefinitions>
@@ -32,9 +32,12 @@
                 <TabControl Grid.Column="1">
                     <TabItem Header="General">
                         <StackPanel>
-                            <Image Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
+                            <Image Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
                             <TextBox IsReadOnly="True" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.Login, Mode=OneWay}"></TextBox>
                             <TextBox IsReadOnly="True" Text="{Binding User.Name, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.CreatedAt, Mode=OneWay}"></TextBox>
+                            <TextBox IsReadOnly="True" Text="{Binding User.UpdatedAt, Mode=OneWay}"></TextBox>
                             <CheckBox Content="Admin" IsHitTestVisible="False" IsChecked="{Binding User.SiteAdmin, Mode=OneWay}"></CheckBox>
                             <CheckBox Content="Hireable" IsHitTestVisible="False" IsChecked="{Binding User.Hireable, Mode=OneWay}"></CheckBox>
                         </StackPanel>
@@ -48,7 +51,7 @@
                                 <ColumnDefinition Width="200" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <ListBox Grid.Column="0" Name="RepositoriesList" ItemsSource="{Binding Repositories}"></ListBox>
+                            <ListBox Grid.Column="0" ItemsSource="{Binding Repositories}"></ListBox>
                         </Grid>
                     </TabItem>
                 </TabControl>
