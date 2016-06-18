@@ -20,17 +20,14 @@
                 <RowDefinition Height="30" />
                 <RowDefinition Height="30" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="150" />
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0">
                 <TextBlock Margin="5">Username</TextBlock>
-                <TextBox Name="input" Width="680" Margin="5" Text="{Binding UserName}"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <TextBox Name="input" Width="250" Margin="5" Text="{Binding UserName}"></TextBox>
                 <Button Name="SendButton" Width="100" Margin="5" Command="{Binding Path=GetUserCommand}">Send</Button>
             </StackPanel>
-            <TextBox Grid.Row="2" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
-            <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBox Grid.Row="1" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
                 <Image Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
                 <ListBox Name="RepositoriesList" ItemsSource="{Binding Repositories}"></ListBox>
             </StackPanel>
