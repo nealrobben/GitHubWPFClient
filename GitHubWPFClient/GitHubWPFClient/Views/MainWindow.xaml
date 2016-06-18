@@ -18,7 +18,6 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0">
@@ -26,17 +25,24 @@
                 <TextBox Name="input" Width="250" Margin="5" Text="{Binding UserName}"></TextBox>
                 <Button Name="SendButton" Width="100" Margin="5" Command="{Binding Path=GetUserCommand}">Send</Button>
             </StackPanel>
-            <TextBox Grid.Row="1" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <Image Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
-                <TabControl>
-                    <TabItem Header="General"></TabItem>
-                    <TabItem Header="Bio"></TabItem>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Name="Avatar" Width="50px" Height="50px" Source="{Binding User.AvatarUrl}"></Image>
+                <TabControl Grid.Column="1">
+                    <TabItem Header="General">
+                        <TextBox Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
+                    </TabItem>
+                    <TabItem Header="Bio">
+                        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.Bio, Mode=OneWay}"></TextBox>
+                    </TabItem>
                     <TabItem Header="Repositories">
                         <ListBox Name="RepositoriesList" ItemsSource="{Binding Repositories}"></ListBox>
                     </TabItem>
                 </TabControl>
-            </StackPanel>
+            </Grid>
         </Grid>
     </DockPanel>
 </Window>
