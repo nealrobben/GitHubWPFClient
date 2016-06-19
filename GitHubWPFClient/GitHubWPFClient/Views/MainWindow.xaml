@@ -121,7 +121,13 @@
                                 <ColumnDefinition Width="200" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <ListBox Grid.Column="0" ItemsSource="{Binding Repositories}"></ListBox>
+                            <ListBox Name="RepositoriesList"  Grid.Column="0" ItemsSource="{Binding Repositories}"></ListBox>
+                            <StackPanel Grid.Column="1" Margin="5">
+                                <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
+                                    <TextBlock Style="{StaticResource LabelStyle}">Description</TextBlock>
+                                    <TextBox Width="200" IsReadOnly="True" Text="{Binding ElementName=RepositoriesList,Path=SelectedItem.Description, Mode=OneWay}"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
                         </Grid>
                     </TabItem>
                 </TabControl>
