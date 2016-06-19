@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GitHubWPFClient.Views"
         mc:Ignorable="d"
-        Title="GitHub Api WPF Client" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+        Title="GitHub Api WPF Client" Height="350" Width="525" WindowStartupLocation="CenterScreen"
+        Cursor="{Binding Cursor}">
     <Window.Resources>
         <Style x:Key="LabelStyle" TargetType="TextBlock">
             <Setter Property="Width" Value="75" />

@@ -12,6 +12,7 @@ namespace GitHubWPFClient.ViewModels
         private IUser _user;
         private ObservableCollection<IRepository> _repositories;
         private string _statusMessage;
+        private Cursor _cursor;
 
         private readonly IGitHubWrapper _wrapper;
 
@@ -23,7 +24,7 @@ namespace GitHubWPFClient.ViewModels
             get { return _userName; }
             set
             {
-                if(_userName != value)
+                if (_userName != value)
                 {
                     _userName = value;
                     OnPropertyChanged(nameof(UserName));
@@ -49,7 +50,7 @@ namespace GitHubWPFClient.ViewModels
             get { return _repositories; }
             set
             {
-                if(_repositories != value)
+                if (_repositories != value)
                 {
                     _repositories = value;
                     OnPropertyChanged(nameof(Repositories));
@@ -66,6 +67,19 @@ namespace GitHubWPFClient.ViewModels
                 {
                     _statusMessage = value;
                     OnPropertyChanged(nameof(StatusMessage));
+                }
+            }
+        }
+
+        public Cursor Cursor
+        {
+            get { return _cursor; }
+            set
+            {
+                if(_cursor != value)
+                {
+                    _cursor = value;
+                    OnPropertyChanged(nameof(Cursor));
                 }
             }
         }
@@ -112,6 +126,7 @@ namespace GitHubWPFClient.ViewModels
             {
                 try
                 {
+                    Cursor = Cursors.Wait;
                     User = _wrapper.GetUser(_userName);
                     Repositories = new ObservableCollection<IRepository>(_wrapper.GetRepositoriesForUser(_userName));
                     StatusMessage = string.Empty;
@@ -121,6 +136,10 @@ namespace GitHubWPFClient.ViewModels
                     User = null;
                     Repositories = null;
                     StatusMessage = "Invalid username";
+                }
+                finally
+                {
+                    Cursor = Cursors.Arrow;
                 }
             }
         }
