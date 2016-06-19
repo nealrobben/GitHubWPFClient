@@ -38,16 +38,14 @@
                     <TabItem Header="General">
                         <ScrollViewer>
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="100" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="110" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Width="100px" Height="100px" Source="{Binding User.AvatarUrl}"></Image>
-                                <StackPanel Grid.Column="1" Grid.Row="0">
+                                <Border BorderThickness="1" BorderBrush="Black" Width="100px" Height="100px" VerticalAlignment="Top" Margin="5">
+                                    <Image Grid.Column="0" HorizontalAlignment="Left" Width="100px" Height="100px" Source="{Binding User.AvatarUrl}"></Image>
+                                </Border>
+                                <StackPanel Grid.Column="1" Margin="5">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Style="{StaticResource LabelStyle}">Login</TextBlock>
                                         <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Login, Mode=OneWay}"></TextBox>
@@ -60,8 +58,6 @@
                                         <TextBlock Style="{StaticResource LabelStyle}">HTML Url</TextBlock>
                                         <TextBox Width="250" IsReadOnly="True" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                </StackPanel>
-                                <StackPanel>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Style="{StaticResource LabelStyle}">Company</TextBlock>
                                         <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Company, Mode=OneWay}"></TextBox>
