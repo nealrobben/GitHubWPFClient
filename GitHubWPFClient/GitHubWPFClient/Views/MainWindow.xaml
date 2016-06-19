@@ -127,6 +127,19 @@
                                     <TextBlock Style="{StaticResource LabelStyle}">Description</TextBlock>
                                     <TextBox Width="200" IsReadOnly="True" Text="{Binding ElementName=RepositoriesList,Path=SelectedItem.Description, Mode=OneWay}"></TextBox>
                                 </StackPanel>
+                                <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
+                                    <TextBlock Style="{StaticResource LabelStyle}">Created at</TextBlock>
+                                    <TextBox Width="125" IsReadOnly="True" Text="{Binding ElementName=RepositoriesList,Path=SelectedItem.CreatedAt, Mode=OneWay}"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
+                                    <TextBlock Style="{StaticResource LabelStyle}">Updated at</TextBlock>
+                                    <TextBox Width="125" IsReadOnly="True" Text="{Binding ElementName=RepositoriesList,Path=SelectedItem.UpdatedAt, Mode=OneWay}"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
+                                    <TextBlock Style="{StaticResource LabelStyle}">Pushed at</TextBlock>
+                                    <TextBox Width="125" IsReadOnly="True" Text="{Binding ElementName=RepositoriesList,Path=SelectedItem.PushedAt, Mode=OneWay}"></TextBox>
+                                </StackPanel>
+                                <CheckBox HorizontalAlignment="Left" Width="75" Content="Fork" IsHitTestVisible="False" IsChecked="{Binding ElementName=RepositoriesList,Path=SelectedItem.Fork, Mode=OneWay}"></CheckBox>
                             </StackPanel>
                         </Grid>
                     </TabItem>
