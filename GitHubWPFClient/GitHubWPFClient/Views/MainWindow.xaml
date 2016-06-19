@@ -139,6 +139,10 @@
                                     <TextBlock Style="{StaticResource LabelStyle}">Pushed at</TextBlock>
                                     <TextBox Width="125" IsReadOnly="True" Text="{Binding ElementName=RepositoriesList,Path=SelectedItem.PushedAt, Mode=OneWay}"></TextBox>
                                 </StackPanel>
+                                <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
+                                    <TextBlock Style="{StaticResource LabelStyle}">Open issues</TextBlock>
+                                    <TextBox Width="50" IsReadOnly="True" Text="{Binding ElementName=RepositoriesList,Path=SelectedItem.OpenIssuesCount, Mode=OneWay}"></TextBox>
+                                </StackPanel>
                                 <CheckBox HorizontalAlignment="Left" Width="75" Content="Fork" IsHitTestVisible="False" IsChecked="{Binding ElementName=RepositoriesList,Path=SelectedItem.Fork, Mode=OneWay}"></CheckBox>
                             </StackPanel>
                         </Grid>
