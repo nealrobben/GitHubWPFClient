@@ -10,6 +10,9 @@
         <Style x:Key="LabelStyle" TargetType="TextBlock">
             <Setter Property="Width" Value="75" />
         </Style>
+        <Style x:Key="FieldStackPanelStyle" TargetType="StackPanel">
+            <Setter Property="Margin" Value="0,5,0,0" />
+        </Style>
     </Window.Resources>
     <DockPanel>
         <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30" DockPanel.Dock="Top">
@@ -46,59 +49,59 @@
                                     <Image Grid.Column="0" HorizontalAlignment="Left" Width="100px" Height="100px" Source="{Binding User.AvatarUrl}"></Image>
                                 </Border>
                                 <StackPanel Grid.Column="1" Margin="5">
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Login</TextBlock>
                                         <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Login, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Name</TextBlock>
                                         <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Name, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">HTML Url</TextBlock>
                                         <TextBox Width="250" IsReadOnly="True" Name="output" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding User.HtmlUrl, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Company</TextBlock>
                                         <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Company, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Blog</TextBlock>
                                         <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Blog, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Location</TextBlock>
                                         <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Location, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">E-mail</TextBlock>
                                         <TextBox Width="150" IsReadOnly="True" Text="{Binding User.Email, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Type</TextBlock>
                                         <TextBox Width="75" IsReadOnly="True" Text="{Binding User.Type, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Public Repos</TextBlock>
                                         <TextBox Width="50" IsReadOnly="True" Text="{Binding User.PublicRepos, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Public Gists</TextBlock>
                                         <TextBox Width="50" IsReadOnly="True" Text="{Binding User.PublicGists, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Followers</TextBlock>
                                         <TextBox Width="50" IsReadOnly="True" Text="{Binding User.Followers, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Following</TextBlock>
                                         <TextBox Width="50" IsReadOnly="True" Text="{Binding User.Following, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Created at</TextBlock>
                                         <TextBox Width="125" IsReadOnly="True" Text="{Binding User.CreatedAt, Mode=OneWay}"></TextBox>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Style="{StaticResource FieldStackPanelStyle}">
                                         <TextBlock Style="{StaticResource LabelStyle}">Updated at</TextBlock>
                                         <TextBox Width="125" IsReadOnly="True" Text="{Binding User.UpdatedAt, Mode=OneWay}"></TextBox>
                                     </StackPanel>
