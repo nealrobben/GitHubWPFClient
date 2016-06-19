@@ -12,7 +12,6 @@ namespace GitHubWPFClient.ViewModels
         private IUser _user;
         private ObservableCollection<IRepository> _repositories;
         private string _statusMessage;
-        private Cursor _cursor;
 
         private readonly IGitHubWrapper _wrapper;
 
@@ -67,19 +66,6 @@ namespace GitHubWPFClient.ViewModels
                 {
                     _statusMessage = value;
                     OnPropertyChanged(nameof(StatusMessage));
-                }
-            }
-        }
-
-        public Cursor Cursor
-        {
-            get { return _cursor; }
-            set
-            {
-                if(_cursor != value)
-                {
-                    _cursor = value;
-                    OnPropertyChanged(nameof(Cursor));
                 }
             }
         }
