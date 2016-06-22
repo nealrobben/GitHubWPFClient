@@ -31,7 +31,7 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0">
                 <TextBlock Margin="5">Username</TextBlock>
-                <TextBox Name="input" Width="250" Margin="5" Text="{Binding UserName}"></TextBox>
+                <TextBox Name="input" Width="250" Margin="5" Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Button Name="SendButton" Width="100" Margin="5" Command="{Binding Path=GetUserCommand}">Send</Button>
             </StackPanel>
             <Grid Grid.Row="1">

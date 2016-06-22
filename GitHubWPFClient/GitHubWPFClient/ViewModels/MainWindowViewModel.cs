@@ -76,7 +76,7 @@ namespace GitHubWPFClient.ViewModels
             {
                 if(_getUserCommand == null)
                 {
-                    _getUserCommand = new RelayCommand(param => GetUser(), param => true);
+                    _getUserCommand = new RelayCommand(param => GetUser(), param => CanSearch());
                 }
 
                 return _getUserCommand;
@@ -104,6 +104,11 @@ namespace GitHubWPFClient.ViewModels
             }
 
             _wrapper = wrapper;
+        }
+
+        private bool CanSearch()
+        {
+            return !string.IsNullOrWhiteSpace(UserName);
         }
 
         private void GetUser()
