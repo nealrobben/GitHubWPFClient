@@ -140,5 +140,27 @@ namespace GitHubWPFClient.Tests
 
             Assert.IsTrue(string.IsNullOrWhiteSpace(vm.UserName));
         }
+
+        [Test]
+        public void SearchDisabledWhenUserNameIsEmpty()
+        {
+            var mock = new Mock<IGitHubWrapper>();
+            var vm = new MainWindowViewModel(mock.Object);
+
+            vm.UserName = string.Empty;
+
+            Assert.IsFalse(vm.GetUserCommand.CanExecute(null));
+        }
+
+        [Test]
+        public void SearchEnabledWhenUserNameIsNotEmpty()
+        {
+            var mock = new Mock<IGitHubWrapper>();
+            var vm = new MainWindowViewModel(mock.Object);
+
+            vm.UserName = "testuser";
+
+            Assert.IsTrue(vm.GetUserCommand.CanExecute(null));
+        }
     }
 }
